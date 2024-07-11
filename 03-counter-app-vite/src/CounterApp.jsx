@@ -9,10 +9,24 @@ export const CounterApp = ({ value }) => {
     setCounter(counter + 1);
   }
 
+  const restador = () => {
+    setCounter(counter - 1);
+  }
+
+  const reset = () => {
+    setCounter(value);
+  }
+
   return (
     <>
       <button onClick={sumador} >
-        CounterApp
+        +1
+      </button>
+      <button onClick={restador} >
+        -1
+      </button>
+      <button onClick={reset} >
+        Reset
       </button>
       <h2>
         {counter}
