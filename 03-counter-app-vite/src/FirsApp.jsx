@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 const newMessage = {
     title: 'New Title',
     message: 'New Message'
@@ -17,4 +19,9 @@ export const FirsApp = ( {title,subtitle,pasoUnNumero} ) => {
     </>
       
     )
+}
+FirsApp.propTypes = {
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired,
+    pasoUnNumero: PropTypes.number.isRequired
 }
