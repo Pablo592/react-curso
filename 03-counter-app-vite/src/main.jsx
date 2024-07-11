@@ -1,12 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
+import { HelloWorldApp} from './HelloWorldApp'
+import { FirsApp } from './FirsApp';
+import './styles.css';
 
-function App() {
-    return <h1>Hola Mundo</h1>;
-}
 
 ReactDOM.createRoot( document.getElementById('root') ).render( 
     <React.StrictMode>
-        <App />
+        <HelloWorldApp />
+        <FirsApp title="Hola Buenos dias" subtitle="Como andas" pasoUnNumero={123} />
     </React.StrictMode>
 );
