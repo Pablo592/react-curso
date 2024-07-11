@@ -5,7 +5,11 @@ const newMessage = {
     message: 'New Message'
 }
 
-export const FirsApp = ( {title,subtitle,pasoUnNumero} ) => {
+export const FirsApp = ( {
+    title = 'Default Title',
+    subtitle = 'Default Subtitle',
+    pasoUnNumero = 0
+} ) => {
 
    // console.log(props);
 
@@ -25,3 +29,5 @@ FirsApp.propTypes = {
     subtitle: PropTypes.string.isRequired,
     pasoUnNumero: PropTypes.number.isRequired
 }
+
+
