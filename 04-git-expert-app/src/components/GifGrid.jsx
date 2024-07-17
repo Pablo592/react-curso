@@ -13,7 +13,6 @@ export const GifGrid = ({ category }) => {
   const getImages = async () => {
     const newImages = await getGifs(category);
     setImages(newImages)
-    console.log(images)
   }
 
   useEffect(() => {
