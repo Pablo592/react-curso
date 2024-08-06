@@ -3,19 +3,25 @@ import { useEffect } from 'react'
 
 export const Message = () => {
 
-    useEffect(() => {
-      console.log('Mensaje montado')
-    
-      return () => {
-        console.log('Mensaje desmontado')
-      }
-    }, [])
-    
+  useEffect(() => {
+
+    const onMouseMove = ({ x, y }) => {
+      const coors = { x, y }
+      console.log(coors)
+    }
+
+    window.addEventListener('mousemove', onMouseMove)
+
+    return () => {
+      window.removeEventListener('mousemove', onMouseMove)
+    }
+  }, [])
+
 
 
   return (
     <>
-    <h1>Usuario ya existe</h1>
+      <h1>Usuario ya existe</h1>
     </>
   )
 }
