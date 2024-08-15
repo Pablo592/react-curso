@@ -14,8 +14,10 @@ import { MemoHook } from './06-memos/MemoHook.jsx'
 import { CallbackHooks } from './06-memos/CallbackHooks.jsx'
 import { Padre } from './07-tarea-memo/Padre.jsx'
 
+import './08-useReducer/intro-reducer'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
  // <React.StrictMode>
-    <Padre />,
+ //   <Padre />,
  // </React.StrictMode>,
 )
