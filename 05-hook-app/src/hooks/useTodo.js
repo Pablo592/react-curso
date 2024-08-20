@@ -66,8 +66,14 @@ export const useTodo = () => {
         console.log('onToggleTodo', id)
     }
 
+    const todosCount = state.length
+
+    const pendingTodosCount = state.filter(todo => !todo.done).length
+
     return {
         state,
+        todosCount,
+        pendingTodosCount,
         handleNewTodo,
         handleDeleteTodo,
         handleToggleTodo
