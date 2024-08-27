@@ -1,27 +1,42 @@
 import { Link } from 'react-router-dom';
 
-export const HeroCard = (hero) => {
+const charactersByHero = (alter_ego, characters) => {
+    if (alter_ego !== characters) {
+        return <p>{characters}</p> ;
+    } else {
+        return '';
+    }
+}
 
-    const imageUrl = `../../assets/heroes/${hero.id}.jpg`
+export const HeroCard = ({
+    id,
+    superhero,
+    alter_ego,
+    first_appearance,
+    characters,
+    publisher
+}) => {
+
+    const imageUrl = `../../assets/heroes/${id}.jpg`
 
     return (
         <div className='card ms-3' style={{ maxWidth: 540 }}>
             <div className='row no-gutters'>
                 <div className='col-md-4'>
-                    <img src={imageUrl} className='card-img' alt={hero.superhero} />
+                    <img src={imageUrl} className='card-img' alt={superhero} />
                 </div>
                 <div className='col-md-8'>
                     <div className='card-body'>
-                        <h5 className='card-title'>{hero.superhero}</h5>
-                        <p className='card-text'>{hero.alter_ego}</p>
+                        <h5 className='card-title'>{superhero}</h5>
+                        <p className='card-text'>{alter_ego}</p>
+        
                         {
-                            (hero.alter_ego !== hero.characters)
-                            && <p className='card-text'>{hero.characters}</p>
+                            charactersByHero(alter_ego, characters)
                         }
                         <p className='card-text'>
-                            <small className='text-muted'>{hero.first_appearance}</small>
+                            <small className='text-muted'>{first_appearance}</small>
                         </p>
-                        <Link to={`./hero/${hero.id}`}>
+                        <Link to={`/hero/${id}`}>
                             More...
                         </Link>
                     </div>
